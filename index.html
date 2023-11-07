@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Party List</title>
-</head>
-<body>
-    <h1>Party List</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Party List</title>
+    </head>
+    <body>
+        <h1>Party List</h1>
 
-    <!-- List of parties -->
-    <ul id="partyList"></ul>
+        <!-- List of parties -->
+        <ul id="partyList"></ul>
 
-    <!-- Form to add a new party -->
-    <form id="partyForm">
-        <input type="text" id="partyName" placeholder="Party Name" required>
-        <input type="date" id="partyDate" required>
-        <input type="time" id="partyTime" required>
-        <input type="text" id="partyLocation" placeholder="Location required">
-        <textarea name="" id="partyDescription" placeholder="Party Description" cols="5" rows="5" required></textarea>
-        <button type="submit">Schedule Party</button>
-    </form>
-    <script src="script.js"></script>
-</body>
+        <!-- Form to add a new party -->
+        <form id="partyForm" method="POST">
+            <input type="text" name="partyName" id="partyName"
+                placeholder="Party Name">
+            <input type="date" id="partyDate">
+            <input type="time" id="partyTime">
+            <input type="text" id="partyLocation"
+                placeholder="Location">
+            <textarea name id="partyDescription" placeholder="Party Description"
+                cols="5" rows="5"></textarea>
+            <button type="submit">Schedule Party</button>
+        </form>
+        <script src="script.js"></script>
+    </body>
 </html>
