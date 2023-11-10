@@ -60,6 +60,8 @@ async function createEvent(event) {
         // renderEvents(events); 
         console.log(events); 
 
+        fetchEvents(); 
+
     } catch (error) {
         console.error(error); 
     }
