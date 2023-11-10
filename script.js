@@ -32,8 +32,8 @@ async function fetchEvents() {
         const events = jsonResponse.data; 
         renderEvents(events); 
 
-    } catch (error) {
-        console.error(error); 
+    } catch (err) {
+        console.error(err); 
     }
 }
 
