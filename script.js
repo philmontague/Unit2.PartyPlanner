@@ -10,7 +10,7 @@ const partyLocation = document.getElementById('partyLocation');
 const partyDescription = document.getElementById('partyDescription'); 
 const partyTime = document.getElementById('partyTime'); 
 
-
+// Form Event Listener 
 formElement.addEventListener('submit', function (event) { 
     event.preventDefault(); 
     const newParty = { name: partyName.value, description: partyDescription.value, date: `${partyDate.value}T${partyTime.value}:00Z`, location: partyLocation.value }
@@ -18,7 +18,7 @@ formElement.addEventListener('submit', function (event) {
     createEvent(newParty); 
 })
 
-
+// fetchEvents Function 
 async function fetchEvents() {
     try {
         const response = await fetch(EVENTS_ENDPOINT); 
@@ -37,7 +37,7 @@ async function fetchEvents() {
 
 fetchEvents(); 
 
-
+// renderEvents Function 
 function renderEvents(events) { 
     PARTY_LIST.innerHTML = ''; 
     for (let event of events) { 
@@ -53,7 +53,7 @@ function renderEvents(events) {
     }
 } 
 
-
+// createEvents Funciton 
 async function createEvent(event) {
     try {
         const response = await fetch( EVENTS_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(event) } ); 
@@ -62,13 +62,13 @@ async function createEvent(event) {
             return; 
         }
         await fetchEvents(); 
-        
+
     } catch (error) {
         console.error(error); 
     }
 }
 
-
+// deleteEent Function 
 async function deleteEvent(id) {
     console.log('deleted'); 
     try {
