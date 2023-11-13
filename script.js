@@ -61,6 +61,8 @@ async function createEvent(event) {
             console.log("API error", response); 
             return; 
         }
+        await fetchEvents(); 
+        
     } catch (error) {
         console.error(error); 
     }
